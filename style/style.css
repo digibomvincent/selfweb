@@ -1,0 +1,278 @@
+@charset "UTF-8";
+
+/* 以下 eric reset */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* 以上 eric reset */
+/* 變數區 */
+:root {
+    /* ctrl+H +> var(--xxxx)取代*/
+    --bg: #151226;
+    --blue: #71E5FF;
+}
+
+/* 共用區 */
+* {
+    box-sizing: border-box;
+    /* 不累加border & padding */
+}
+
+@font-face {
+    font-family: "akira";
+    src: url(../webfonts/Akira\ Expanded\ Demo.otf);
+}
+
+@font-face {
+    font-family: "coolvet";
+    src: url(../webfonts/coolvetica\ rg.otf);
+}
+
+@font-face {
+    font-family: "coolvet-it";
+    src: url(../webfonts/coolvetica\ rg\ it.otf);
+}
+
+body {
+    font-family:
+        /* 英文有-或單詞不用引號 要給也可以 */
+        /*西文*/
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial,
+        /*中文*/
+        "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+    color: var(--blue);
+    /* 全網字體預設 */
+    background-color: var(--bg);
+    min-width: 1000px;
+
+}
+
+img {
+    display: block;
+    width: 100%;
+    /* svg預設100% */
+}
+
+a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    /* 取消預設底線 */
+}
+
+/* topbar */
+.topbar {
+    display: flex;
+    height: 90px;
+}
+
+.topbar .logo {
+    flex: 1;
+    border-bottom: #71E5FF solid 2px;
+    font-family: 'akira';
+    font-size: 2.5rem;
+    line-height: 90px;
+    padding-left: 35px;
+}
+
+.topbar .welcome {
+    flex: 2;
+    overflow: hidden;
+    border: var(--blue) solid;
+    border-width: 0 2px 2px 2px;
+}
+
+.roll_text img {
+    height: 52px;
+    width: 60px;
+}
+
+.roll_text h1 {
+    white-space: nowrap;
+    font-family: 'akira';
+    font-size: 2.5rem;
+    line-height: 90px;
+}
+
+.topbar .roll_text {
+    display: flex;
+    align-items: center;
+}
+
+.r {
+    animation: Scroll 40s forwards linear infinite;
+}
+
+@keyframes Scroll {
+    0% {
+        transform: translate(0, 0)
+    }
+
+    100% {
+        transform: translate(-100%, 0)
+    }
+}
+
+.topbar .contact {
+    flex: 1;
+    border-bottom: #71E5FF solid 2px;
+    color: var(--blue);
+    font-family: 'coolvet';
+    font-size: 2.5rem;
+    line-height: 90px;
+    text-align: end;
+    padding-right: 35px;
+}
+
+.row1 {
+    display: flex;
+    font-family: 'akira';
+    font-size: 2.5rem;
+    height: 50vw;
+    text-align: center;
+    line-height: 90px;
+}
+
+.row1 .w98 {
+    background-image: url(../images/w98.svg);
+    background-size: cover;
+    background-position: center;
+    width: 50%;
+    font-size: 4rem;
+    line-height: 27vw;
+}
+.about{
+    overflow: hidden;
+    width: 50%;
+}
+.name{
+    white-space: nowrap;
+}
