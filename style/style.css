@@ -268,11 +268,56 @@ a {
     width: 50%;
     font-size: 4rem;
     line-height: 27vw;
+    border: var(--blue) solid;
+    border-width: 0 2px 2px 0;
 }
-.about{
+
+.about {
     overflow: hidden;
     width: 50%;
+    position: relative;
+    border-bottom: var(--blue) solid 2px;
 }
-.name{
+
+.name {
     white-space: nowrap;
+    height: 12.5%;
+    background-color: var(--bg);
+    z-index: 99;
+    position: absolute;
+    font-size: 80%;
+    border-bottom: var(--blue) solid 2px;
+}
+
+.about h2 {
+    position: absolute;
+    top: 33%;
+}
+
+.circle_text {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    animation: rotate 40s forwards linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+.self_pic {
+    position: absolute;
+    width: 50%;
+    left: 25%;
+}
+
+.arr_down {
+    position: absolute;
+    bottom: 0;
 }
