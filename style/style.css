@@ -138,6 +138,12 @@ table {
     /* ctrl+H +> var(--xxxx)取代*/
     --bg: #151226;
     --blue: #71E5FF;
+    --white1: #F0F0F0;
+    --gray0: #C3C3C3;
+    --gray1: #B1B1B1;
+    --gray2: #7E7E7E;
+    --gray3: #262626;
+
 }
 
 /* 共用區 */
@@ -161,7 +167,7 @@ table {
     src: url(../webfonts/coolvetica\ rg\ it.otf);
 }
 
-body {
+body.home {
     font-family:
         /* 英文有-或單詞不用引號 要給也可以 */
         /*西文*/
@@ -173,6 +179,18 @@ body {
     background-color: var(--bg);
     min-width: 1000px;
 
+}
+
+body.port {
+    font-family:
+        /* 英文有-或單詞不用引號 要給也可以 */
+        /*西文*/
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial,
+        /*中文*/
+        "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+    /* 全網字體預設 */
+    min-width: 1000px;
+    background-color: #1B0707;
 }
 
 img {
@@ -210,7 +228,7 @@ a {
     border-width: 0 2px 2px 2px;
 }
 
-.roll_text img {
+.weed {
     height: 52px;
     width: 60px;
 }
@@ -228,7 +246,7 @@ a {
 }
 
 .r {
-    animation: Scroll 40s forwards linear infinite;
+    animation: Scroll 20s linear infinite;
 }
 
 @keyframes Scroll {
@@ -280,18 +298,42 @@ a {
 }
 
 .name {
-    white-space: nowrap;
-    height: 12.5%;
-    background-color: var(--bg);
+    height: 90px;
     z-index: 99;
     position: absolute;
-    font-size: 80%;
+}
+
+.r2 {
+    animation: Scroll2 10s linear infinite;
+}
+
+@keyframes Scroll2 {
+    0% {
+        left: 0;
+    }
+
+    50% {
+        left: calc(100% - 492px);
+    }
+
+    100% {
+        left: 0;
+    }
+}
+
+.bg {
+    width: 100%;
     border-bottom: var(--blue) solid 2px;
+    background-color: var(--bg);
+    height: 90px;
+    z-index: 98;
+    position: absolute;
 }
 
 .about h2 {
     position: absolute;
     top: 33%;
+    width: 100%;
 }
 
 .circle_text {
@@ -315,9 +357,117 @@ a {
     position: absolute;
     width: 50%;
     left: 25%;
+    top: 33%;
 }
 
 .arr_down {
     position: absolute;
     bottom: 0;
+}
+
+.row2 {
+    font-size: 2rem;
+    font-family: 'coolvet';
+    height: 200px;
+    padding: 40px;
+    border-bottom: var(--blue) 2px solid;
+}
+
+.row3 {
+    font-size: 2.5rem;
+    font-family: 'coolvet';
+}
+
+.row3 h1 {
+    text-align: center;
+    margin: 40px 0;
+    font-family: 'akira';
+    font-size: 4rem;
+}
+
+.skill {
+    display: flex;
+}
+.skill_box{
+    width: 80px;
+    margin: 0 20px;
+}
+
+
+/* portfolio */
+.port section {
+    background-image: url(/images/port/portbg.svg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.folders {
+    color: white;
+    display: flex;
+    height: 36vh;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.folders img {
+    height: 70px;
+}
+
+.lowbar {
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--gray0);
+    border-width: 2px 0 0 2px;
+    border: var(--white1) solid;
+
+}
+
+.lowbar>* {
+    display: flex;
+}
+
+.btn_start img {
+    height: 32px;
+    width: 32px;
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
+.btn_start {
+    background-color: var(--gray0);
+    margin: 10px;
+    box-shadow:
+        inset var(--white1) 2px 2px,
+        inset var(--gray1) 4px 4px,
+        inset var(--gray3) -2px -2px,
+        inset var(--gray2) -4px -4px;
+    border: none;
+    width: 120px;
+    display: flex;
+    align-items: center;
+    font-size: 1.625rem;
+}
+
+.time {
+    background-color: var(--gray0);
+    margin: 10px;
+    box-shadow:
+        inset var(--white1) -3px -3px,
+        inset var(--gray3) 3px 3px;
+    width: 130px;
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.time img {
+    height: 28px;
+    width: 28px;
+    margin-left: 10px;
+    margin-right: 5px;
 }
