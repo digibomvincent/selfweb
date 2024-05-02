@@ -288,6 +288,7 @@ a {
     line-height: 27vw;
     border: var(--blue) solid;
     border-width: 0 2px 2px 0;
+    color: var(--blue);
 }
 
 .about {
@@ -383,13 +384,6 @@ a {
     margin-left: 22%;
 }
 
-.row3 h1 {
-    text-align: center;
-    margin: 50px 0;
-    font-family: 'akira';
-    font-size: 4rem;
-}
-
 .skill {
     display: flex;
     height: 80px;
@@ -415,7 +409,16 @@ a {
     width: 50%;
 }
 
-.row4 h1 {
+.edu_top {
+    border-bottom: var(--blue) 2px solid;
+}
+
+.experience {
+    border-left: var(--blue) 2px solid;
+    width: 50%;
+}
+
+.title {
     font-family: 'akira';
     font-size: 4rem;
     text-align: center;
@@ -424,7 +427,7 @@ a {
 
 .timeline {
     max-width: 720px;
-    margin: 0 auto;
+    margin-left: 10%;
 }
 
 .event {
@@ -441,7 +444,7 @@ a {
     margin-right: 45px;
     font-size: 1.5rem;
     line-height: 2rem;
-    }
+}
 
 .event .description {
     font-size: 14px;
@@ -473,6 +476,51 @@ a {
     height: 0.4rem;
     background-color: var(--blue);
     border-radius: 50%;
+}
+
+.row5 {
+    border-top: var(--blue) 2px solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.row5 h2 {
+    font-family: 'coolvet';
+    font-size: 2rem;
+    line-height: 150%;
+    color: var(--white1);
+}
+
+.contact_frame {
+    width: 450px;
+    padding: 10px 45px;
+    animation: frame 10s both linear infinite;
+    border-radius: 20px;
+}
+
+@keyframes frame {
+    
+    0% {
+        box-shadow: var(--blue) 0 0 0;
+    }
+    
+    20% {
+        box-shadow: var(--blue) 3px 3px 0;
+    }
+    40% {
+        box-shadow: var(--blue) 0 0 0;
+    }
+    60% {
+        box-shadow: var(--blue) 0 0 0;
+    }
+    80% {
+        box-shadow: var(--blue) -3px -3px 0;
+    }
+    100% {
+        box-shadow: var(--blue) 0 0 0;
+    }
 }
 
 /* portfolio */
