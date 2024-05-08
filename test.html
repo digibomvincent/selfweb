@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 样式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* tab 容器 */
+        .tab-container {
+            display: flex;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            /* 添加阴影效果 */
+        }
+
+        /* tab 按钮 */
+        .tab-button {
+            flex: 1;
+            text-align: center;
+            padding: 10px 20px;
+            background-color: #f0f0f0;
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            /* 添加过渡效果 */
+        }
+
+        /* tab 按钮悬停效果 */
+        .tab-button:hover {
+            background-color: #e0e0e0;
+        }
+
+        /* tab 按钮选中效果 */
+        .tab-button.active {
+            background-color: #ffffff;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            /* 添加立体浮凸效果 */
+        }
+
+        /* tab 内容 */
+        .tab-content {
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tab-container">
+        <div class="tab-button active" onclick="changeTab(0)">Tab 1</div>
+        <div class="tab-button" onclick="changeTab(1)">Tab 2</div>
+    </div>
+    <div class="tab-content">
+        <div id="tab1" style="display:block;">内容 1</div>
+        <div id="tab2" style="display:none;">内容 2</div>
+    </div>
+
+    <script>
+        function changeTab(tabIndex) {
+            // 获取所有tab按钮和内容
+            var tabButtons = document.querySelectorAll('.tab-button');
+            var tabContents = document.querySelectorAll('.tab-content > div');
+
+            // 移除所有tab按钮的 active 类
+            tabButtons.forEach(function (button) {
+                button.classList.remove('active');
+            });
+
+            // 隐藏所有tab内容
+            tabContents.forEach(function (content) {
+                content.style.display = 'none';
+            });
+
+            // 添加选中tab的 active 类和显示对应的tab内容
+            tabButtons[tabIndex].classList.add('active');
+            tabContents[tabIndex].style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>

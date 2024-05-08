@@ -655,14 +655,17 @@ a {
 
 .content_box {
     box-shadow:
-        inset var(--white1) 2px 0,
-        inset var(--gray1) 4px 0,
+        inset var(--white1) 2px 2px,
+        inset var(--gray1) 4px 4px,
         inset var(--gray3) -2px -2px,
         inset var(--gray2) -4px -4px;
 }
 
 .tabs {
     display: flex;
+    width: calc(100% - 4px);
+    /*  position: relative;
+    top: 4px; */
 }
 
 .tab {
@@ -673,21 +676,24 @@ a {
     font-size: 1rem;
     flex-grow: 1;
     box-shadow:
-        inset var(--white1) 0 2px,
-        inset var(--gray1) 0 4px,
+        inset var(--white1) 2px 2px,
+        inset var(--gray1) 4px 4px,
         inset var(--gray3) -2px 0,
-        inset var(--gray2) -4px 0,
-        inset var(--white1) 0 -2px,
-        inset var(--gray1) 0 -4px;
+        inset var(--gray2) -4px 0;
+
 }
 
 .tab.active {
     flex-grow: 1;
     box-shadow:
-        inset var(--white1) 2px 2px,
-        inset var(--gray1) 4px 4px,
         inset var(--gray3) -2px 0,
-        inset var(--gray2) -4px 0;
+        inset var(--gray2) -4px 0,
+        var(--gray1) -2px -2px,
+        var(--white1) -4px -4px,
+        var(--gray0) 0 4px;
+        position: relative;
+        left: 4px;
+        
 }
 
 .content {
