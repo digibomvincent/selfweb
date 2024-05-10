@@ -143,6 +143,7 @@ table {
     --gray1: #B1B1B1;
     --gray2: #7E7E7E;
     --gray3: #262626;
+    --magenta: #CC58C7;
 
 }
 
@@ -529,6 +530,13 @@ a {
 }
 
 /* portfolio */
+.video {
+    /* 分頁的背景 */
+    background-image: url(/images/port/portbg.svg);
+    background-size: cover;
+    background-position: center;
+}
+
 .port section {
     background-image: url(/images/port/portbg.svg);
     background-size: cover;
@@ -607,6 +615,7 @@ a {
 }
 
 /* video */
+
 .window {
     height: calc(100vh - 70px);
     box-shadow:
@@ -615,6 +624,9 @@ a {
         inset var(--gray3) -2px -2px,
         inset var(--gray2) -4px -4px;
     background-color: var(--gray0);
+    width: 90vw;
+    min-width: 1250px;
+    margin: 0 auto;
     padding: 5px;
 }
 
@@ -650,7 +662,9 @@ a {
 }
 
 .work {
-    margin: 20px;
+    margin: 20px auto;
+    width: 80vw;
+    min-width: 1000px;
 }
 
 .content_box {
@@ -659,6 +673,24 @@ a {
         inset var(--gray1) 4px 4px,
         inset var(--gray3) -2px -2px,
         inset var(--gray2) -4px -4px;
+
+    padding: 40px;
+    font-family: 'pixel_s';
+}
+
+.content_box h1 {
+    font-size: 2.5rem;
+    color: var(--magenta);
+    margin-bottom: 20px;
+}
+
+.content_box h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.content_box h3 {
+    font-size: 1rem;
 }
 
 .tabs {
@@ -673,7 +705,9 @@ a {
     color: black;
     border: none;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 1.5rem;
+    line-height: 3rem;
+    height: 3rem;
     flex-grow: 1;
     box-shadow:
         inset var(--white1) 2px 2px,
@@ -691,19 +725,41 @@ a {
         var(--gray1) -2px -2px,
         var(--white1) -4px -4px,
         var(--gray0) 0 4px;
-        position: relative;
-        left: 4px;
-        
+    position: relative;
+    left: 4px;
+
 }
 
 .content {
     display: none;
-    padding: 20px;
-    max-width: 930px;
-    font-size: 14px;
-    line-height: 21px;
+    font-size: 1rem;
+    line-height: 1.5rem;
+
 }
 
 .content.active {
     display: block;
+    overflow: hidden;
+    height: 65vh;
+}
+
+.work_box {
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    padding: 40px 0;
+
+
+}
+
+.work_box .yt {
+    width: 566px;
+    height: 321px;
+    margin: 20px 0;
+    padding: 3px;
+    box-shadow:
+        inset var(--white1) -3px -3px,
+        inset var(--gray3) 3px 3px;
 }
