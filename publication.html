@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publication</title>
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+
+<body class="workpage">
+    <main class="window">
+        <div class="bluebar">
+            <h1>Publication</h1>
+            <a class="close" href="./portfolio.html" target="_top">X</a>
+        </div>
+        <section class="work">
+            <div class="tabs">
+                <button class="tab active" onclick="openTab('tab1')">應用數學系所</button>
+                <!-- <button class="tab" onclick="openTab('tab2')">永豐AI GO競賽</button> -->
+            </div>
+            <div class="content_box">
+                <div id="tab1" class="content active">
+                    <div class="descript">
+                        <h2>碩士論文</h2>
+                        <h3>研究撰寫</h3>
+                    </div>
+                    <div class="work_box">
+                        <div class="col2 ">
+                            <div class="col2_a">
+                                <h2>應用機器學習技術預測 Facebook 廣告投放 CPM 之研究</h2>
+                                <h3>Research on CPM Prediction of Facebook Advertising with Machine Learning Technique
+                                </h3>
+                                <div class="pub_link">
+                                    <a href="https://hdl.handle.net/11296/2ju356" target="_blank">論文連結</a>
+                                </div>
+                            </div>
+                            <div class="col2_b">
+                                <h3>摘要</h3>
+                                <hr>
+                                <h3>隨著網際網路的蓬勃發展，數位廣告已經是不可或缺的商業活動，不管是 社群平台、影音平台或是搜尋引擎，皆透過自身龐大的用戶與數據，吸引企業
+                                    投放廣告，而在日益競爭的數位廣告市場中，該怎麼掌控預算與精準投放則是 企業面臨的課題。
+                                    本研究藉由「K」公司經營電商一年間包含廣告企劃與投放後台數據等資料 進行研究，「K」公司以每千次曝光成本(Cost Per Thousand Impressions,
+                                    CPM) 作 為每則廣告的衡量指標，CPM 超過 200 時視為"過高"，但整個行銷活動牽涉 到文案、廣告投放和廣告設計等多項因素，難以決定從何優化。因此本研究建
+                                    立了預測 CPM 高低之模型，探討影響 CPM 之因素，讓「K」公司能在整體流程 的前期、中期、後期做出調整，提高公司的營利。
+                                    本研究先進行資料前處理，過程中將非結構性資料編碼，最後得到六個輸 入變數:預期客群性別、廣告影片取向、廣告投放標籤、影片播放到 25% 的比例 、影片播放到 95%
+                                    的比例、連結點擊率 (Click Through Rate, CTR)，與一個輸出 變數:CPM，在實驗中透過卷積神經網路 (Convolutional Neural
+                                    Network, CNN)模 型將預覽圖轉換成數值後加入輸入變數，使用機器學習中六種常見的分類技術: 隨機森林(Random
+                                    Forests)、CatBoost、XGBoost、LlightGBM、羅吉斯回歸 (Logistic Regression)與支持向量機(Support Vector
+                                    Machine，SVM)，建立 Facebook 廣告投放 CPM 預測模型。根據結果，模型最終達到 0.9161 的準確率與 0.89 的 AUC(Area
+                                    Under the Curve)，能協助「K」公司在決策時作為參考。</h3>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div id="tab2" class="content">
+                </div>
+        </section>
+
+
+
+
+    </main>
+    <section>
+        <div class="lowbar">
+            <a class="btn_start" href="./index.html">
+                <img src="/images/port/icon w98.svg" alt="">
+                <h2>Back</h2>
+            </a>
+            <figure class="time">
+                <img src="/images/port/icon speaker.svg" alt="">
+                <h2>10:00AM</h2>
+            </figure>
+        </div>
+    </section>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

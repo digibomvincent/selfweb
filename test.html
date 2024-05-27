@@ -49,6 +49,34 @@
         .tab-content {
             padding: 20px;
         }
+
+        /* dvd */
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+        }
+
+        .container {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            border: 2px solid #fff;
+            overflow: hidden;
+        }
+
+        .dvd {
+            position: absolute;
+            font-size: 24px;
+            color: #fff;
+            padding: 10px 20px;
+            background-color: #ff0000;
+            border-radius: 5px;
+        }
     </style>
 </head>
 
@@ -61,6 +89,12 @@
         <div id="tab1" style="display:block;">内容 1</div>
         <div id="tab2" style="display:none;">内容 2</div>
     </div>
+
+    <!-- dvd -->
+    <div class="container">
+        <div class="dvd">DVD</div>
+    </div>
+
 
     <script>
         function changeTab(tabIndex) {
@@ -82,6 +116,57 @@
             tabButtons[tabIndex].classList.add('active');
             tabContents[tabIndex].style.display = 'block';
         }
+
+
+        /* dvd */
+        const dvd = document.querySelector('.dvd');
+        const container = document.querySelector('.container');
+
+        let containerWidth = container.clientWidth;
+        let containerHeight = container.clientHeight;
+        let dvdWidth = dvd.clientWidth;
+        let dvdHeight = dvd.clientHeight;
+
+        let posX = Math.random() * (containerWidth - dvdWidth);
+        let posY = Math.random() * (containerHeight - dvdHeight);
+        let velocityX = 2;
+        let velocityY = 2;
+
+        const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#00ffff', '#ff00ff'];
+
+        function changeColor() {
+            const newColor = colors[Math.floor(Math.random() * colors.length)];
+            dvd.style.backgroundColor = newColor;
+        }
+
+        function update() {
+            posX += velocityX;
+            posY += velocityY;
+
+            if (posX + dvdWidth >= containerWidth || posX <= 0) {
+                velocityX = -velocityX;
+                changeColor();
+            }
+
+            if (posY + dvdHeight >= containerHeight || posY <= 0) {
+                velocityY = -velocityY;
+                changeColor();
+            }
+
+            dvd.style.left = `${posX}px`;
+            dvd.style.top = `${posY}px`;
+
+            requestAnimationFrame(update);
+        }
+
+        update();
+
+        window.addEventListener('resize', () => {
+            containerWidth = container.clientWidth;
+            containerHeight = container.clientHeight;
+            dvdWidth = dvd.clientWidth;
+            dvdHeight = dvd.clientHeight;
+        });
     </script>
 </body>
 

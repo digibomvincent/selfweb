@@ -225,10 +225,16 @@ a {
 .topbar .logo {
     flex: 1;
     border-bottom: #71E5FF solid 2px;
-    font-family: 'akira';
-    font-size: 2.5rem;
-    line-height: 90px;
     padding-left: 35px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.logo img {
+    height: 30px;
+    width: fit-content;
 }
 
 .topbar .welcome {
@@ -834,7 +840,7 @@ a {
 .yt h3 {
     color: var(--white1);
     margin-bottom: 5px;
-    
+
 }
 
 /* social */
@@ -865,3 +871,17 @@ a {
     font-weight: bold;
 }
 
+.col2_b h2 {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    font-weight: bold;
+}
+/* publication */
+.pub_link{
+    margin-top: 20px;
+    color: var(--white1);
+    border: #b9b7e6 solid 2px;
+    width: 150px;
+    text-align: center;
+    line-height: 2;
+}
