@@ -230,11 +230,31 @@ a {
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    position: relative;
+
+}
+
+.logo::after {
+    content: url(../images/logo/logo_ring-02.svg);
+    width: 20px;
+    top: 40px;
+    left: 201.5px;
+    position: absolute;
+    transition: all 0.5s ease-in-out;
+}
+.logo:hover::after {
+    content: url(../images/logo/logo_ring-02.svg);
+    width: 20px;
+    top: 40px;
+    left: 201.5px;
+    position: absolute;
+    transform: rotate(-180deg);
 }
 
 .logo img {
     height: 30px;
     width: fit-content;
+    z-index: 1;
 }
 
 .topbar .welcome {
@@ -469,6 +489,14 @@ a {
 .experience {
     border-left: var(--blue) 2px solid;
     width: 50%;
+}
+.edu_low{
+    height: 346px;
+    position: relative;
+}
+.dvd{
+    width: 250px;
+    position: absolute;
 }
 
 .title {
@@ -876,8 +904,9 @@ a {
     line-height: 1.5;
     font-weight: bold;
 }
+
 /* publication */
-.pub_link{
+.link {
     margin-top: 20px;
     color: var(--white1);
     border: #b9b7e6 solid 2px;

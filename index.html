@@ -16,7 +16,7 @@
 
     <head>
         <div class="topbar">
-            <div class="logo"><img src="./images/logo/logo2.svg" alt=""></div>
+            <div class="logo"><img src="./images/logo/logo.svg" alt=""></div>
             <div class="welcome">
                 <div class="roll_text r">
                     <img class="weed" src="./images/weed.svg" alt="">
@@ -43,10 +43,10 @@
                     <h1>⭣</h1>
                     <h1>⭣</h1>
                     <h1>⭣</h1>
-                    <h1>⭣</h1> 
                     <h1>⭣</h1>
                     <h1>⭣</h1>
-                    <h1>⭣</h1> 
+                    <h1>⭣</h1>
+                    <h1>⭣</h1>
                 </div>
             </div>
         </section>
@@ -96,7 +96,7 @@
                     </div>
                 </div>
                 <div class="edu_low">
-                    FREE
+                    <img class="dvd" src="./images/logo/logo_b.svg" alt="">
                 </div>
             </div>
             <div class="experience">
@@ -132,7 +132,7 @@
         </section>
         <section class="row5">
             <h1 class="title">CONTACT</h1>
-            <div class="contact_frame" >
+            <div class="contact_frame">
                 <h2>+886 975133155</h2>
                 <h2>digibomvincent@gmail.com</h2>
                 <h2>IG - jiajia_vincent</h2>
@@ -140,7 +140,63 @@
         </section>
     </main>
 
+    <script>
+        /* dvd */
+        const dvd = document.querySelector('.dvd');
+        const container = document.querySelector('.edu_low');
 
+        let containerWidth = container.clientWidth;
+        let containerHeight = container.clientHeight;
+        let dvdWidth = dvd.clientWidth;
+        let dvdHeight = dvd.clientHeight;
+
+        let posX = Math.random() * (containerWidth - dvdWidth);
+        let posY = Math.random() * (containerHeight - dvdHeight);
+        let velocityX = 2;
+        let velocityY = 2;
+
+        const colors = ['b', 'p', 'g', 'r', 'w', 'y'];
+        let lastColorIndex = -1;
+
+        function changeColor() {
+            let newColorIndex;
+            do {
+                newColorIndex = Math.floor(Math.random() * colors.length);
+            } while (newColorIndex === lastColorIndex);
+            lastColorIndex = newColorIndex;
+            newColor=colors[newColorIndex]
+            dvd.src = `./images/logo/logo_${newColor}.svg`;
+        }
+
+        function update() {
+            posX += velocityX;
+            posY += velocityY;
+
+            if (posX + dvdWidth >= containerWidth || posX <= 0) {
+                velocityX = -velocityX;
+                changeColor();
+            }
+
+            if (posY + dvdHeight >= containerHeight || posY <= 0) {
+                velocityY = -velocityY;
+                changeColor();
+            }
+
+            dvd.style.left = `${posX}px`;
+            dvd.style.top = `${posY}px`;
+
+            requestAnimationFrame(update);
+        }
+
+        update();
+
+        window.addEventListener('resize', () => {
+            containerWidth = container.clientWidth;
+            containerHeight = container.clientHeight;
+            dvdWidth = dvd.clientWidth;
+            dvdHeight = dvd.clientHeight;
+        });
+    </script>
 </body>
 
 </html>
