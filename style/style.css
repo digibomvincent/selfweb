@@ -137,8 +137,8 @@ table {
 :root {
     /* ctrl+H +> var(--xxxx)取代*/
     --bg: #151226;
-    --blue: #71E5FF;
-    --white1: #F0F0F0;
+    --blue: #71e5ff;
+    --white1: #f0f0f0;
     --gray0: #C3C3C3;
     --gray1: #B1B1B1;
     --gray2: #7E7E7E;
@@ -614,13 +614,13 @@ a {
 /* portfolio */
 .workpage {
     /* 分頁的背景 */
-    background-image: url(/images/port/portbg.svg);
+    background-image: url(./images/port/portbg.svg);
     background-size: cover;
     background-position: center;
 }
 
 .port section {
-    background-image: url(/images/port/portbg.svg);
+    background-image: url(./images/port/portbg.svg);
     background-size: cover;
     background-position: center;
     height: 100vh;
