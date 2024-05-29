@@ -5,10 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     <title>HINKA</title>
+    <link rel="icon" href="./images/logosmall-02.svg">
     <link rel="stylesheet" href="./style/style.css">
 </head>
 
@@ -52,7 +50,8 @@
             </div>
         </section>
         <section class="row2">
-            <h1>“ I have more than six years of experience in design and video production. I am passionate about learning
+            <h1>“ I have more than six years of experience in design and video production. I am passionate about
+                learning
                 technology and exploring new possibilities. Considering my career development, I have decided to
                 transition to becoming a front-end engineer. I believe that my background in design, animation, and data
                 analysis will greatly contribute to my success in this new role. ”</h1>
@@ -138,13 +137,14 @@
             <div class="contact_frame">
                 <h2>+886 975133155</h2>
                 <h2>digibomvincent@gmail.com</h2>
-                <h2>IG - jiajia_vincent</h2>
+                <h2>PIN CHIA, CHEN</h2>
             </div>
         </section>
         <div class="footer">
             <small>Copyright &copy; 2024 HINKA All Rights Reserved.</small>
         </div>
     </main>
+    <script src="./js/jquery-3.7.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
     <script>
         /* dvd */
@@ -207,7 +207,21 @@
             max: 25,
             speed: 400
         });
+        /* scroll */
+        $(function () {
+            //hamburger
+            // $('.hamburger').click(function () {
+            //三條跟X切換(toggleClass增減class) 
+            //$(this).toggleClass('is-active');
+            //$('.topbar nav').toggleClass('show')
+            //})
 
+            /* 錨點跳頁 */
+            $('.contact').click(function () {
+                var pos = $('.row5').offset();/* 抓座標位置 */
+                $('html,body').animate({ scrollTop: pos.top }, 1500);
+            });
+        });
     </script>
 </body>
 

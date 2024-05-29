@@ -317,7 +317,7 @@ a {
 }
 
 .row1 .w98 {
-    background-image: url(../images/w98.svg);
+    background-image: url(../images/98.JPG);
     background-size: cover;
     background-position: center;
     width: 50%;
@@ -326,6 +326,25 @@ a {
     border: var(--blue) solid;
     border-width: 0 2px 2px 0;
     color: var(--blue);
+    transition: all 1s ease-in-out;
+}
+
+.w98:hover {
+    background-image: url(../images/98_hover.JPG);
+    animation: w98 5s linear infinite;
+}
+
+@keyframes w98 {
+    0% {
+        color: var(--blue);
+    }
+
+    50% {
+        color: #e27a61;
+    }
+    100% {
+        color: var(--blue);
+    }
 }
 
 .about {
@@ -687,6 +706,12 @@ a {
     color: black;
 }
 
+.btn_start:active {
+    box-shadow:
+        inset var(--white1) -3px -3px,
+        inset var(--gray3) 3px 3px;
+}
+
 .btn_start h2 {
     font-size: 1rem;
     color: black;
@@ -919,14 +944,27 @@ a {
 /* publication */
 .link {
     margin-top: 20px;
-    color: var(--white1);
     border: #b9b7e6 solid 2px;
     width: 150px;
     text-align: center;
     line-height: 2;
+    letter-spacing: 0;
+    transition: all 0.35s ease;
+}
+
+.link a {
+    color: var(--white1);
+}
+
+.link:hover {
+    background: #b9b7e6;
+    letter-spacing: 5px;
+
 }
 
 /* footer */
-.footer{
+.footer {
     text-align: center;
+    margin-top: 100px;
+    margin-bottom: 40px;
 }
