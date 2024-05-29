@@ -26,4 +26,20 @@ function openTab(tabId) {
         document.querySelector('.logo_roll').style.transform = 'translateX(-232.5px) rotate(-360deg)';
     }
 }
+function updateTime() {
+    const timeElement = document.getElementById('time');
+    const now = new Date();
+    let hours = now.getHours();
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+        const ampm = hours >= 12 ? 'PM' : 'AM';
+    
+    hours = hours % 12;
+    hours = hours != 0 ? hours : 12; // 小時'0'應顯示為'12'
+    const currentTime = `${hours}:${minutes}${ampm}`;
+    timeElement.textContent = currentTime;
+}
 
+// 初始化顯示時間
+updateTime();
+// 每秒更新一次時間
+setInterval(updateTime, 1000);

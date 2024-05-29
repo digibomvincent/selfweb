@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PORTFOLIO</title>
+    <link rel="icon" href="./images/logosmall-02.svg">
     <link rel="stylesheet" href="./style/style.css">
 </head>
 
@@ -40,10 +41,29 @@
             </a>
             <figure class="time">
                 <img src="./images/port/icon speaker.svg" alt="">
-                <h2>10:00AM</h2>
+                <h2 id="time"></h2>
             </figure>
         </div>
     </section>
+    <script>
+        function updateTime() {
+            const timeElement = document.getElementById('time');
+            const now = new Date();
+            let hours = now.getHours();
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+
+            hours = hours % 12;
+            hours = hours != 0 ? hours : 12; // 小時'0'應顯示為'12'
+            const currentTime = `${hours}:${minutes}${ampm}`;
+            timeElement.textContent = currentTime;
+        }
+
+        // 初始化顯示時間
+        updateTime();
+        // 每秒更新一次時間
+        setInterval(updateTime, 1000);
+    </script>
 </body>
 
 </html>

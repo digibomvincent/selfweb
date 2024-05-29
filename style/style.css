@@ -305,6 +305,11 @@ a {
     line-height: 90px;
     text-align: end;
     padding-right: 35px;
+    transition: all 1s ease;
+}
+.contact:hover{
+    letter-spacing: 10px;
+    background: #e27a61;
 }
 
 .row1 {
