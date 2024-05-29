@@ -614,13 +614,13 @@ a {
 /* portfolio */
 .workpage {
     /* 分頁的背景 */
-    background-image: url(./images/port/portbg.svg);
+    background-image: url(../images/port/portbg.svg);
     background-size: cover;
     background-position: center;
 }
 
 .port section {
-    background-image: url(./images/port/portbg.svg);
+    background-image: url(../images/port/portbg.svg);
     background-size: cover;
     background-position: center;
     height: 100vh;
