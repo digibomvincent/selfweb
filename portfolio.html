@@ -45,6 +45,32 @@
             </figure>
         </div>
     </section>
+    <div id="loading">
+        <div class="load_box">
+            <div class="load_box_blue">
+                <h1>Time traveling</h1>
+            </div>
+            <div class="load_content">
+                <div class="load_content_top">
+                    <img src="./images/port/car.png" alt="">
+                    <h1>Welcome! <br> Have a nice day.</h1>
+                </div>
+
+                <div class="progress-bar">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script>
         function updateTime() {
             const timeElement = document.getElementById('time');
@@ -63,6 +89,20 @@
         updateTime();
         // 每秒更新一次時間
         setInterval(updateTime, 1000);
+        //loading
+        function showLoading() {
+            document.getElementById('loading').style.display = 'flex';
+        }
+
+        function hideLoading() {
+            document.getElementById('loading').style.display = 'none';
+        }
+    
+        // 在DOM完全載入後顯示loading動畫並設置3秒後關閉動畫
+        document.addEventListener('DOMContentLoaded', function() {
+            showLoading();
+            setTimeout(hideLoading, 3000);
+        });
     </script>
 </body>
 

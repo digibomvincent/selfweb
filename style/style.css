@@ -307,7 +307,8 @@ a {
     padding-right: 35px;
     transition: all 1s ease;
 }
-.contact:hover{
+
+.contact:hover {
     letter-spacing: 10px;
     background: #e27a61;
 }
@@ -347,6 +348,7 @@ a {
     50% {
         color: #e27a61;
     }
+
     100% {
         color: var(--blue);
     }
@@ -972,4 +974,130 @@ a {
     text-align: center;
     margin-top: 100px;
     margin-bottom: 40px;
+}
+
+/* loading */
+#loading {
+    display: block;
+    /* 初始狀態為隱藏 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.load_box {
+    box-shadow:
+        inset var(--white1) 2px 2px,
+        inset var(--gray1) 4px 4px,
+        inset var(--gray3) -2px -2px,
+        inset var(--gray2) -4px -4px;
+    background-color: var(--gray0);
+    width: 500px;
+    height: 350px;
+    font-family: 'pixel_s';
+}
+
+.load_box_blue {
+    font-size: 1.5rem;
+    color: white;
+    height: 40px;
+    line-height: 40px;
+    background: linear-gradient(90deg, #00007B, #1085D2);
+    padding: 0 10px;
+    margin: 4px;
+}
+
+.load_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.load_content_top {
+    display: flex;
+    height: 220px;
+    align-items: center;
+}
+
+.load_content_top img {
+    height: 67.5px;
+    width: 210px;
+    margin-right: 50px;
+}
+
+.progress-bar {
+    display: flex;
+    width: 400px;
+    height: 30px;
+    background-color: var(--gray1);
+    padding: 2px;
+    box-shadow:
+        inset var(--white1) -3px -3px,
+        inset var(--gray2) 3px 3px;
+    align-items: center;
+}
+
+.progress-bar div {
+    width: 10%;
+    height: 22px;
+    background-color: #00007B;
+    opacity: 0;
+    animation: lightUp 0.1s linear both;
+    margin: 0 2px;
+}
+@keyframes lightUp {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.progress-bar div:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.progress-bar div:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.progress-bar div:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.progress-bar div:nth-child(4) {
+    animation-delay: 0.9s;
+}
+
+.progress-bar div:nth-child(5) {
+    animation-delay: 1.2s;
+}
+
+.progress-bar div:nth-child(6) {
+    animation-delay: 1.5s;
+}
+
+.progress-bar div:nth-child(7) {
+    animation-delay: 1.8s;
+}
+
+.progress-bar div:nth-child(8) {
+    animation-delay: 2.1s;
+}
+
+.progress-bar div:nth-child(9) {
+    animation-delay: 2.4s;
+}
+
+.progress-bar div:nth-child(10) {
+    animation-delay: 2.7s;
 }
