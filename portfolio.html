@@ -97,11 +97,13 @@
         function hideLoading() {
             document.getElementById('loading').style.display = 'none';
         }
-    
+
         // 在DOM完全載入後顯示loading動畫並設置3秒後關閉動畫
-        document.addEventListener('DOMContentLoaded', function() {
-            showLoading();
-            setTimeout(hideLoading, 3000);
+        document.addEventListener('DOMContentLoaded', function () {
+            if (document.referrer.includes('index.html')) {
+                showLoading();
+                setTimeout(hideLoading, 3000);
+            }
         });
     </script>
 </body>

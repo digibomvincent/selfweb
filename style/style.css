@@ -978,15 +978,13 @@ a {
 
 /* loading */
 #loading {
-    display: block;
-    /* 初始狀態為隱藏 */
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: var(--bg);
-    display: flex;
     justify-content: center;
     align-items: center;
     z-index: 9999;
@@ -1054,14 +1052,17 @@ a {
     animation: lightUp 0.1s linear both;
     margin: 0 2px;
 }
+
 @keyframes lightUp {
     0% {
         opacity: 0;
     }
+
     100% {
         opacity: 1;
     }
 }
+
 .progress-bar div:nth-child(1) {
     animation-delay: 0s;
 }
