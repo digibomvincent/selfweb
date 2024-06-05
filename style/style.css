@@ -639,40 +639,114 @@ a {
 
 /* portfolio */
 /* portfolio-mine */
+.mine_all {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.mine_bg {
+    background: #e7e6e1;
+    border: solid 2px #6650a3;
+    padding: 15px;
+}
+
+.minebar {
+    font-family: 'pixel_s';
+    font-size: 1rem;
+    color: #fff1ff;
+    width: 234px;
+    height: 40px;
+    background: linear-gradient(0deg, #dcc8ed, #6440bc, #b29aee);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    border: solid #6650a3;
+    border-width: 2px 2px 0 2px;
+}
+
 .gameface {
     width: 50px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    box-shadow:
+        inset #7B7B7B -5px -5px,
+        inset white 5px 5px;
+    padding: 5px;
+}
+.gameface:active{
+    box-shadow: none;
+    border: 1px solid var(--gray3);
 }
 
 table td {
-    width: 30px;
-    height: 30px;
-    border: 1px solid black;
+    width: 50px;
+    height: 50px;
 }
 
 .mine {
     position: relative;
 }
 
-.mine .top td {
-    background-color: aquamarine;
+
+.mine .top {
+    position: relative;
+    border: 2px solid var(--gray3);
 }
 
 .mine .down {
     position: absolute;
     top: 0;
-    z-index: -1;
+    /* z-index: 1; */
+}
+
+.mine .down td {
+    border: 1px solid var(--gray3);
+}
+
+td {
+    background: #e7e6e1;
 }
 
 .flag {
-    background: url(../images/logosmall-02.svg);
+    background: url(../images/mine/flag.gif) no-repeat;
+    background-position: center;
+    background-size: 70%;
+}
+
+.mm,
+.ms {
+    box-shadow:
+        inset #7B7B7B -5px -5px,
+        inset white 5px 5px;
+}
+
+.m1,
+.m2,
+.md {
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+    line-height: 48px;
+}
+
+.m1 {
+    color: blue;
+}
+
+.m2 {
+    color: green;
 }
 
 .mask {
-    height: 146px;
-    width: 146px;
+    height: 230px;
+    width: 230px;
     position: absolute;
     top: 0;
     display: none;
+    /* border: #4efa65 solid 2px; */
 }
 
 /* portfolio-mine */
@@ -690,7 +764,6 @@ table td {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
 .folders {
