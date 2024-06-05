@@ -638,6 +638,44 @@ a {
 }
 
 /* portfolio */
+/* portfolio-mine */
+.gameface {
+    width: 50px;
+}
+
+table td {
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+}
+
+.mine {
+    position: relative;
+}
+
+.mine .top td {
+    background-color: aquamarine;
+}
+
+.mine .down {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+
+.flag {
+    background: url(../images/logosmall-02.svg);
+}
+
+.mask {
+    height: 146px;
+    width: 146px;
+    position: absolute;
+    top: 0;
+    display: none;
+}
+
+/* portfolio-mine */
 .workpage {
     /* 分頁的背景 */
     background-image: url(../images/port/portbg.svg);

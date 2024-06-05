@@ -34,6 +34,66 @@
                 <h1>Publication</h1>
             </div>
         </div>
+        <section class="mine_all">
+            <div class="mine_bg">
+                <figure class="gameface"><img src="./images/mine/f1.gif" alt=""></figure>
+                <div class="mine">
+                    <table class="top">
+                        <tr>
+                            <td class="mm"></td>
+                            <td class="ms"></td>
+                            <td class="ms"></td>
+                            <td class="ms"></td>
+                        </tr>
+                        <tr>
+                            <td class="ms"></td>
+                            <td class="ms"></td>
+                            <td class="ms"></td>
+                            <td class="mm"></td>
+                        </tr>
+                        <tr>
+                            <td class="ms"></td>
+                            <td class="ms"></td>
+                            <td class="mm"></td>
+                            <td class="ms"></td>
+                        </tr>
+                        <tr>
+                            <td class="mm"></td>
+                            <td class="ms"></td>
+                            <td class="ms"></td>
+                            <td class="ms"></td>
+                        </tr>
+                    </table>
+                    <table class="down">
+                        <tr>
+                            <td class="md">*</td>
+                            <td class="m1">1</td>
+                            <td class="m1">1</td>
+                            <td class="m1">1</td>
+                        </tr>
+                        <tr>
+                            <td class="m1">1</td>
+                            <td class="m2">2</td>
+                            <td class="m2">2</td>
+                            <td class="md">*</td>
+                        </tr>
+                        <tr>
+                            <td class="m1">1</td>
+                            <td class="m2">2</td>
+                            <td class="md">*</td>
+                            <td class="m2">2</td>
+                        </tr>
+                        <tr>
+                            <td class="md">*</td>
+                            <td class="m2">2</td>
+                            <td class="m1">1</td>
+                            <td class="m1">1</td>
+                        </tr>
+                    </table>
+                    <div class="mask"></div>
+                </div>
+            </div>
+        </section>
         <div class="lowbar">
             <a class="btn_start" href="./index.html">
                 <img src="./images/port/icon w98.svg" alt="">
@@ -72,6 +132,7 @@
         </div>
     </div>
     
+    
     <script>
         function updateTime() {
             const timeElement = document.getElementById('time');
@@ -105,6 +166,62 @@
                 showLoading();
                 setTimeout(hideLoading, 3000);
             }
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            function reset() {
+                $(".gameface img").click(function () {
+                    $(".gameface img").attr("src", "./images/mine/f1.gif");
+                    $(".mine .top td").removeClass("flag").css("opacity", "1");
+                    $(".mask").css("display", "none");
+                });
+            }
+            function checkAndUpdateImage() {
+                let lose = false;
+                let flag = true;
+                let clear = true;
+    
+                $(".mm").each(function () {
+                    if ($(this).css("opacity") == "0") {
+                        lose = true;
+                    }
+                });
+    
+                $(".mm").each(function () {
+                    if (!$(this).hasClass("flag")) {
+                        flag = false;
+                    }
+                });
+                $(".ms").each(function () {
+                    if ($(this).css("opacity") !== "0") {
+                        clear = false;
+                    }
+                });
+    
+                if (lose) {
+                    $(".gameface img").attr("src", "./images/mine/f2.gif");
+                    $(".mask").css("display", "block");
+                    reset();
+                }
+                if (flag && clear) {
+                    $(".gameface img").attr("src", "./images/mine/f3.gif");
+                    $(".mask").css("display", "block");
+                    reset();
+                }
+            }
+    
+            $(".mine .top td").contextmenu(function (event) {
+                event.preventDefault();
+                $(this).toggleClass("flag");
+                checkAndUpdateImage();
+            });
+            $(".mm, .ms").click(function () {
+                $(this).css("opacity", "0");
+                checkAndUpdateImage();
+            });
+    
         });
     </script>
 </body>

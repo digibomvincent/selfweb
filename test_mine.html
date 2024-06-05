@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table td {
+        width: 30px;
+        height: 30px;
+        border: 1px solid black;
+    }
+
+    .mine {
+        position: relative;
+    }
+
+    .mine .top td {
+        background-color: aquamarine;
+    }
+
+    .mine .down {
+        position: absolute;
+        top: 0;
+        z-index: -1;
+    }
+
+    .flag {
+        background: url(./images/logosmall-02.svg);
+    }
+
+    .mask {
+        height: 146px;
+        width: 146px;
+        position: absolute;
+        top: 0;
+        display: none;
+    }
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        function reset() {
+            $("figure img").click(function () {
+                $("figure img").attr("src", "./images/mine/f1.gif");
+                $(".mine .top td").removeClass("flag").css("opacity", "1");
+                $(".mask").css("display", "none");
+            });
+        }
+        function checkAndUpdateImage() {
+            let lose = false;
+            let flag = true;
+            let clear = true;
+
+            $(".mm").each(function () {
+                if ($(this).css("opacity") == "0") {
+                    lose = true;
+                }
+            });
+
+            $(".mm").each(function () {
+                if (!$(this).hasClass("flag")) {
+                    flag = false;
+                }
+            });
+            $(".ms").each(function () {
+                if ($(this).css("opacity") !== "0") {
+                    clear = false;
+                }
+            });
+
+            if (lose) {
+                $("figure img").attr("src", "./images/mine/f2.gif");
+                $(".mask").css("display", "block");
+                reset();
+            }
+            if (flag && clear) {
+                $("figure img").attr("src", "./images/mine/f3.gif");
+                $(".mask").css("display", "block");
+                reset();
+            }
+        }
+
+        $(".mine .top td").contextmenu(function (event) {
+            event.preventDefault();
+            $(this).toggleClass("flag");
+            checkAndUpdateImage();
+        });
+        $(".mm, .ms").click(function () {
+            $(this).css("opacity", "0");
+            checkAndUpdateImage();
+        });
+
+    });
+</script>
+
+<body>
+
+    <section class="mine_all">
+        <div class="mine_bg">
+            <figure><img src="./images/mine/f1.gif" alt=""></figure>
+            <div class="mine">
+                <table class="top">
+                    <tr>
+                        <td class="mm"></td>
+                        <td class="ms"></td>
+                        <td class="ms"></td>
+                        <td class="ms"></td>
+                    </tr>
+                    <tr>
+                        <td class="ms"></td>
+                        <td class="ms"></td>
+                        <td class="ms"></td>
+                        <td class="mm"></td>
+                    </tr>
+                    <tr>
+                        <td class="ms"></td>
+                        <td class="ms"></td>
+                        <td class="mm"></td>
+                        <td class="ms"></td>
+                    </tr>
+                    <tr>
+                        <td class="mm"></td>
+                        <td class="ms"></td>
+                        <td class="ms"></td>
+                        <td class="ms"></td>
+                    </tr>
+                </table>
+                <table class="down">
+                    <tr>
+                        <td class="md">*</td>
+                        <td class="m1">1</td>
+                        <td class="m1">1</td>
+                        <td class="m1">1</td>
+                    </tr>
+                    <tr>
+                        <td class="m1">1</td>
+                        <td class="m2">2</td>
+                        <td class="m2">2</td>
+                        <td class="md">*</td>
+                    </tr>
+                    <tr>
+                        <td class="m1">1</td>
+                        <td class="m2">2</td>
+                        <td class="md">*</td>
+                        <td class="m2">2</td>
+                    </tr>
+                    <tr>
+                        <td class="md">*</td>
+                        <td class="m2">2</td>
+                        <td class="m1">1</td>
+                        <td class="m1">1</td>
+                    </tr>
+                </table>
+                <div class="mask"></div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
