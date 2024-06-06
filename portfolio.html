@@ -36,15 +36,15 @@
         </div>
         <div class="mine_all">
             <div class="minebar">
-                <h1>Bugsweeper</h1>
-                <h1>X</h1>
+                <h1>Chill out here</h1>
+                <h1 class="close_m">―</h1>
             </div>
             <div class="mine_bg">
                 <figure class="gameface"><img src="./images/mine/f1.gif" alt=""></figure>
                 <div class="mine">
                     <table class="down">
                         <tr>
-                            <td class="md">🪳</td>
+                            <td class="md"><img src="./images/mine/bug.svg" alt="" ></td>
                             <td class="m1">1</td>
                             <td class="m1">1</td>
                             <td class="m1">1</td>
@@ -53,16 +53,16 @@
                             <td class="m1">1</td>
                             <td class="m2">2</td>
                             <td class="m2">2</td>
-                            <td class="md">🪳</td>
+                            <td class="md"><img src="./images/mine/bug.svg" alt="" ></td>
                         </tr>
                         <tr>
                             <td class="m1">1</td>
                             <td class="m2">2</td>
-                            <td class="md">🪳</td>
+                            <td class="md"><img src="./images/mine/bug.svg" alt="" ></td>
                             <td class="m2">2</td>
                         </tr>
                         <tr>
-                            <td class="md">🪳</td>
+                            <td class="md"><img src="./images/mine/bug.svg" alt="" ></td>
                             <td class="m2">2</td>
                             <td class="m1">1</td>
                             <td class="m1">1</td>
@@ -97,6 +97,12 @@
                     
                     <div class="mask"></div>
                 </div>
+            </div>
+        </div>
+        <div class="mine_small">
+            <div class="minebar">
+                <h1>Chill out here</h1>
+                <h1 class="pop_m">☐</h1>
             </div>
         </div>
         <div class="lowbar">
@@ -226,7 +232,14 @@
                 $(this).css("opacity", "0");
                 checkAndUpdateImage();
             });
-
+            $(".close_m").click(function(){
+               $(".mine_all").hide();
+               $(".mine_small").show();
+            })
+            $(".pop_m").click(function(){
+               $(".mine_small").hide();
+               $(".mine_all").show();
+            })
         });
     </script>
 </body>

@@ -107,6 +107,7 @@ section {
 
 body {
     line-height: 1;
+    user-select: none;
 }
 
 ol,
@@ -138,8 +139,8 @@ table {
     /* ctrl+H +> var(--xxxx)取代*/
     --bg: #151226;
     --blue: #71e5ff;
-    --white1: #f0f0f0;
-    --gray0: #C3C3C3;
+    --white1: #E9F0F8;
+    --gray0: #c3c3c3;
     --gray1: #B1B1B1;
     --gray2: #7E7E7E;
     --gray3: #262626;
@@ -676,7 +677,8 @@ a {
         inset white 5px 5px;
     padding: 5px;
 }
-.gameface:active{
+
+.gameface:active {
     box-shadow: none;
     border: 1px solid var(--gray3);
 }
@@ -749,16 +751,27 @@ td {
     /* border: #4efa65 solid 2px; */
 }
 
+.md img {
+    height: 25px;
+    margin: auto;
+}
+.mine_small{
+    position: fixed;
+    bottom: 50px;
+    left: 150px;
+    display: none;
+}
+
 /* portfolio-mine */
 .workpage {
     /* 分頁的背景 */
-    background-image: url(../images/port/portbg.svg);
+    background-image: url(../images/port/portbg2.jpg);
     background-size: cover;
     background-position: center;
 }
 
 .port section {
-    background-image: url(../images/port/portbg.svg);
+    background-image: url(../images/port/portbg2.jpg);
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -766,13 +779,31 @@ td {
     flex-direction: column;
 }
 
+.folders div:nth-child(1) {
+    margin-top:110px;
+}
+
+.folders div:nth-child(2) {
+    margin-top: 50px;
+}
+
+.folders div:nth-child(3) {
+    margin-top: 70px;
+}
+
+.folders div:nth-child(4) {
+    margin-top: 90px;
+}
+.folders div:nth-child(5) {
+    margin-top: 40px;
+}
+
 .folders {
     color: white;
     display: flex;
     height: 36vh;
-    align-items: flex-start;
     justify-content: space-evenly;
-    padding-top: 70px;
+    padding: 0 300px;
 }
 
 .folders h1 {
