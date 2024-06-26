@@ -755,7 +755,8 @@ td {
     height: 25px;
     margin: auto;
 }
-.mine_small{
+
+.mine_small {
     position: fixed;
     bottom: 50px;
     left: 150px;
@@ -780,7 +781,7 @@ td {
 }
 
 .folders div:nth-child(1) {
-    margin-top:110px;
+    margin-top: 110px;
 }
 
 .folders div:nth-child(2) {
@@ -794,6 +795,7 @@ td {
 .folders div:nth-child(4) {
     margin-top: 90px;
 }
+
 .folders div:nth-child(5) {
     margin-top: 40px;
 }
@@ -1092,7 +1094,7 @@ td {
 
 /* publication */
 .link {
-    margin-top: 20px;
+    margin: 20px 0;
     border: #b9b7e6 solid 2px;
     width: 150px;
     text-align: center;
